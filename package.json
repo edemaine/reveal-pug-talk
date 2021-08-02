@@ -1,0 +1,31 @@
+{
+  "name": "revealjs-pug-stylus-coffee",
+  "version": "0.0.0",
+  "description": "Reveal.js slides using Pug templating with Stylus and CoffeeScript filters",
+  "scripts": {
+    "build": "gulp",
+    "watch": "gulp watch",
+    "dist": "gulp dist",
+    "deploy": "gulp deploy"
+  },
+  "author": "Erik Demaine",
+  "license": "MIT",
+  "dependencies": {
+    "@fontsource/merriweather": "^4.4.5",
+    "@svgdotjs/svg.js": "^3.0.16",
+    "katex": "^0.13.11",
+    "reveal.js": "^4.1.3",
+    "reveal.js-plugins": "^4.1.3"
+  },
+  "devDependencies": {
+    "coffeescript": "^2.5.1",
+    "gulp": "^4.0.2",
+    "gulp-chmod": "^3.0.0",
+    "gulp-coffee": "^3.0.3",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-pug": "^5.0.0",
+    "jstransformer-coffee-script": "^1.1.1",
+    "jstransformer-markdown-it": "^2.1.0",
+    "jstransformer-stylus": "^1.5.0"
+  }
+}

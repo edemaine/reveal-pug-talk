@@ -1,0 +1,5 @@
+index.html
+dist
+.publish
+node_modules
+package-lock.json

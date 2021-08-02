@@ -1,0 +1,52 @@
+doctype html
+html(nighteye="disabled")
+  head
+    meta(charset="utf8")
+    script(src="node_modules/reveal.js/dist/reveal.js")
+    //-script(src="node_modules/reveal.js/plugin/markdown/markdown.js")
+    script(src="node_modules/reveal.js-plugins/chalkboard/plugin.js")
+    script(src="node_modules/@svgdotjs/svg.js/dist/svg.min.js")
+    script(src="node_modules/katex/dist/katex.min.js")
+    script(src="node_modules/katex/dist/contrib/auto-render.min.js")
+    link(rel="stylesheet", href="node_modules/reveal.js/dist/reveal.css")
+    link(rel="stylesheet", href="node_modules/reveal.js/dist/theme/black.css")
+    link(rel="stylesheet", href="node_modules/reveal.js-plugins/chalkboard/style.css")
+    link(rel="stylesheet", href="node_modules/reveal.js-plugins/menu/font-awesome/css/all.css")
+    link(rel="stylesheet", href="node_modules/@fontsource/merriweather/latin-400.css")
+    link(rel="stylesheet", href="node_modules/@fontsource/merriweather/latin-400-italic.css")
+    link(rel="stylesheet", href="node_modules/@fontsource/merriweather/latin-900.css")
+    link(rel="stylesheet", href="node_modules/@fontsource/merriweather/latin-900-italic.css")
+    //-
+      link(rel="preconnect" href="https://fonts.gstatic.com")
+      link(href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,900;1,400;1,900&display=swap", rel="stylesheet")
+    link(rel="stylesheet", href="node_modules/katex/dist/katex.css")
+    style
+      include:stylus index.styl
+  body
+    .reveal
+      .slides
+        include slides.pug
+    script
+      :coffee-script
+        Reveal.initialize
+          center: false
+          slideNumber: true
+          hash: true
+          transition: 'none'
+          width: 1100
+          height: 768
+          minScale: 0.1
+          maxScale: 10
+          plugins: [RevealChalkboard]
+          chalkboard:
+            background: ['none', 'node_modules/reveal.js-plugins/chalkboard/img/blackboard.png']
+            boardmarkerWidth: 7
+            colorButtons: true
+            theme: 'whiteboard'
+        renderMathInElement document.body,
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false},
+          ]
+      // Include custom scripts etc. here
+      //- include:coffee-script index.coffee

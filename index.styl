@@ -1,0 +1,45 @@
+// Customize RevealJS font and related features
+:root
+  --r-main-font: Merriweather, serif
+  --r-heading-font: Merriweather, serif
+  --r-heading-text-transform: none
+  --r-background-color: black  // Full black background
+  --r-selection-background-color: #444
+// Small-caps heading option
+//.reveal
+//  h1, h2, h3, h4, h5, h6
+//    font-variant: small-caps
+
+// Extend fragment animations to 1 second
+.reveal .slides section .fragment
+  opacity: 0
+  visibility: hidden
+  transition: all 1s ease
+  will-change: initial
+  &.visible
+    opacity: 1
+    visibility: inherit
+
+// For debugging slide size, uncomment the following:
+//.reveal .slides section
+//  background: #111
+
+// Formatting tools specific to this presentation
+cite
+  color: #c0a5c0
+table.side-by-side
+  table-layout: fixed
+  td
+    width: 50%
+table.compact
+  td, th
+    padding: 0 0.5em
+
+.invert
+  filter: invert(1) hue-rotate(180deg)
+.url
+  display: block
+  font-size: 30%
+  font-family: monospace
+.sep
+  color: #9a5b9a
