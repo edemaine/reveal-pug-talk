@@ -19,7 +19,7 @@ exports.watch = watch = ->
 deploySet = [
   './.nojekyll'
   './index.html'
-  './cayley4.png'
+  # Add images etc. in ./ to this list
   './node_modules/reveal.js/dist/reveal.js'
   './node_modules/reveal.js-plugins/chalkboard/plugin.js'
   './node_modules/@svgdotjs/svg.js/dist/svg.min.js'
