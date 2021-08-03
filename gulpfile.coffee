@@ -12,9 +12,9 @@ exports.pug = pug = ->
 
 ## npm run watch / npx gulp watch: continuously update index.html from deps
 exports.watch = watch = ->
-  gulp.watch '*.pug', pug
+  gulp.watch '*.pug', ignoreInitial: false, pug
   gulp.watch '*.styl', pug
-  gulp.watch '*.coffee', pug
+  gulp.watch '*.coffee', ignored: 'gulpfile.coffee', pug
 
 deploySet = [
   './.nojekyll'

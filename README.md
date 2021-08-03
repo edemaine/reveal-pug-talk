@@ -59,7 +59,7 @@ To build the slides HTML (`index.html`) from the source files:
    npm run build
    ```
 
-If you're live-editing the file and want `index.html` to continually build
+If you're live-editing source files and want `index.html` to continually build
 and update, use the following command:
 
 ```sh
