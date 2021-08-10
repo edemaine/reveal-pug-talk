@@ -13,7 +13,7 @@ This repository contains slides for our talk...
 
 This repository uses the
 [reveal-pug-talk template](https://github.com/edemaine/reveal-pug-talk)
-to slides by combining the following technology (all free and open source):
+to make slides by combining the following technology (all free and open source):
 
 * [RevealJS](https://revealjs.com/): a flexible HTML presentation framework,
   extendable by plugins and themes.  Here we use:
