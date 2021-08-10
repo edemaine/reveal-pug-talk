@@ -9,19 +9,19 @@ This repository contains slides for our talk...
 [![Title slide](title_slide.jpg)](https://...github.io/)
 -->
 
-## Technology: RevealJS + Pug + [Stylus] + [CoffeeScript] + [KaTeX] + [SVG.js]
+## Technology: reveal.js + Pug + Stylus + CoffeeScript + [KaTeX] + [SVG.js]
 
 This repository uses the
 [reveal-pug-talk template](https://github.com/edemaine/reveal-pug-talk)
 to make slides by combining the following technology (all free and open source):
 
-* [RevealJS](https://revealjs.com/): a flexible HTML presentation framework,
+* [reveal.js](https://revealjs.com/): a flexible HTML presentation framework,
   extendable by plugins and themes.  Here we use:
   * [Chalkboard](https://github.com/rajgoel/reveal.js-plugins/tree/master/chalkboard):
     enables live drawing annotation on the slides (using pen or touch or mouse)
   * [Merriweather](https://fonts.google.com/specimen/Merriweather) font
 * [Pug](https://pugjs.org/): a concise indentation-based notation for HTML,
-  which makes it easier to express RevealJS slides,
+  which makes it easier to express reveal.js slides,
   and to mix together other languages.  Here we use:
   * [Stylus](https://stylus-lang.com/): a concise indentation-based notation
     for CSS (styling of HTML)
@@ -41,8 +41,8 @@ Here's an overview of the individual files and what they do:
 * [`index.pug`](index.pug): Top-level Pug file that calls all other files.
   Defines the top-level structure of the document, but has no slides.
 * [`slides.pug`](slides.pug): Slides and specific animations are defined here.
-* [`index.styl`](index.styl): Custom RevealJS styling,
-  and any specific styling for the slides.
+* [`index.styl`](index.styl): Custom reveal.js styling,
+  and specific styling for the slides.
 
 <!-- Add any .coffee, images, etc. files here, if desired -->
 
