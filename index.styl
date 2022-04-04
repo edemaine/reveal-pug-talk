@@ -25,22 +25,90 @@
 //  background: #111
 //  height: 100%
 
-// Formatting tools specific to this presentation
+// Left-justify bullets
+ul, ol
+  width: calc(100% - 1em)  // account for 1em left margin
+  box-sizing: border-box
+
+// Inverse table headings
+th
+  color: black
+  background: #ccc
+  border-color: black
+
+// Citation styling: purple, never bold, smaller in headings
 cite
   color: #c0a5c0
-table.side-by-side
-  table-layout: fixed
-  td
-    width: 50%
-table.compact
-  td, th
-    padding: 0 0.5em
+  font-weight: normal
+  /h2 &
+    font-size: 85%
 
+// Column formatting:
+//   .columns
+//     .column = regular column, minimal possible width
+//     .column.arrow = rightward arrow
+//     .column.space = some blank space
+//     .column.fill = column that grows to fill available width
+.columns
+  width: 100%
+  display: flex
+  align-items: center
+  justify-content: space-evenly
+.column
+  text-align: center !important
+  max-height: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  &.fill
+    flex-basis: 0
+    flex-grow: 1
+    align-self: stretch
+  &.space
+    width: 30px
+  &.arrow
+    margin: 0 10px
+    font-size: 200%
+    &:before
+      content: '🡆'
+
+// Bootstrap helpers
+.text-center
+  text-align: center !important
+.vertical-middle
+  vertical-align: middle !important
+.d-inline-block
+  display: inline-block
+.justify-content-center
+  justify-content: center
+.justify-content-between
+  justify-content: space-between
+.h-100
+  height: 100%
+.ml-1, span.space
+  margin-left: 0.25em
+.ml-2
+  margin-left: 0.5em
+
+// Additional helpers
+.hidden
+  position: absolute
+  display: block
 .invert
   filter: invert(1) hue-rotate(180deg)
+  &.pop
+    filter: invert(1) hue-rotate(180deg) drop-shadow(0 0 1px white)
+    &.bright
+      filter: invert(1) hue-rotate(180deg) brightness(1.75) drop-shadow(0 0 1px white)
+.full
+  margin: 0
+  max-width: 100%
+  max-height: 100%
 .url
   display: block
-  font-size: 30%
+  font-size: 40%
   font-family: monospace
 .sep
+  display: inline-block
   color: #9a5b9a
+  margin: 0 0.25em

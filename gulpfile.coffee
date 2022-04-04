@@ -7,7 +7,7 @@ gulpGhPages = require 'gulp-gh-pages'
 ## npm run build / npx gulp pug: builds index.html from index.pug etc.
 exports.pug = pug = ->
   gulp.src 'index.pug'
-  .pipe gulpPug pretty: true
+  .pipe gulpPug pretty: false # true adds extra spaces :-(
   .pipe gulpChmod 0o644
   .pipe gulp.dest './'
 
