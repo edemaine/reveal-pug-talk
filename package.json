@@ -13,8 +13,8 @@
   "dependencies": {
     "@fontsource/merriweather": "^4.4.5",
     "@svgdotjs/svg.js": "^3.0.16",
-    "katex": "^0.13.11",
-    "reveal.js": "^4.1.3",
+    "katex": "^0.15.3",
+    "reveal.js": "^4.3.1",
     "reveal.js-plugins": "^4.1.3"
   },
   "devDependencies": {
