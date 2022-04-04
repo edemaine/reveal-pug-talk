@@ -6,11 +6,13 @@ html(nighteye="disabled")
     script(src="node_modules/reveal.js/plugin/math/math.js")
     //-script(src="node_modules/reveal.js/plugin/markdown/markdown.js")
     script(src="node_modules/reveal.js-plugins/chalkboard/plugin.js")
+    script(src="node_modules/reveal.js-plugins/customcontrols/plugin.js")
     script(src="node_modules/@svgdotjs/svg.js/dist/svg.min.js")
     link(rel="stylesheet", href="node_modules/reveal.js/dist/reveal.css")
     link(rel="stylesheet", href="node_modules/reveal.js/dist/theme/black.css")
     link(rel="stylesheet", href="node_modules/reveal.js-plugins/chalkboard/style.css")
-    link(rel="stylesheet", href="node_modules/reveal.js-plugins/menu/font-awesome/css/all.css")
+    link(rel="stylesheet", href="node_modules/reveal.js-plugins/customcontrols/style.css")
+    link(rel="stylesheet", href="node_modules/@fortawesome/fontawesome-free/css/solid.min.css")
     link(rel="stylesheet", href="node_modules/@fontsource/merriweather/latin-400.css")
     link(rel="stylesheet", href="node_modules/@fontsource/merriweather/latin-400-italic.css")
     link(rel="stylesheet", href="node_modules/@fontsource/merriweather/latin-900.css")
@@ -38,6 +40,7 @@ html(nighteye="disabled")
           plugins: [
             RevealMath.KaTeX
             RevealChalkboard
+            RevealCustomControls
           ]
           katex: local: 'node_modules/katex'
           chalkboard:
@@ -45,5 +48,16 @@ html(nighteye="disabled")
             boardmarkerWidth: 7
             colorButtons: true
             theme: 'whiteboard'
+          customcontrols:
+            # Icons from Font Awesome Free, licensed CC-BY
+            controls: [
+              icon: '<svg height="24" viewBox="0 0 448 512"><path fill="currentColor" d="M384 32C419.3 32 448 60.65 448 96V416C448 451.3 419.3 480 384 480H64C28.65 480 0 451.3 0 416V96C0 60.65 28.65 32 64 32H384zM325.8 139.7C310.1 124.1 284.8 124.1 269.2 139.7L247.8 161.1L318.7 232.1L340.1 210.7C355.8 195 355.8 169.7 340.1 154.1L325.8 139.7zM111.5 303.8L96.48 363.1C95.11 369.4 96.71 375.2 100.7 379.2C104.7 383.1 110.4 384.7 115.9 383.4L176 368.3C181.6 366.9 186.8 364 190.9 359.9L296.1 254.7L225.1 183.8L119.9 288.1C115.8 293.1 112.9 298.2 111.5 303.8z"/></svg>'
+              title: 'Toggle chalkboard (B)'
+              action: 'RevealChalkboard.toggleChalkboard();'
+            ,
+              icon: '<svg height="24" viewBox="0 0 512 512"><path fill="currentColor" d="M362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32zM421.7 220.3L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3z"/></svg>'
+              title: 'Toggle slide annotation (C)'
+              action: 'RevealChalkboard.toggleNotesCanvas();'
+            ]
       // Include custom scripts etc. here
       //- include:coffee-script index.coffee
