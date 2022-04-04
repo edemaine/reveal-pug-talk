@@ -1,4 +1,5 @@
 gulp = require 'gulp'
+gulpCoffee = require 'gulp-coffee'
 gulpPug = require 'gulp-pug'
 gulpChmod = require 'gulp-chmod'
 gulpGhPages = require 'gulp-gh-pages'
@@ -10,11 +11,24 @@ exports.pug = pug = ->
   .pipe gulpChmod 0o644
   .pipe gulp.dest './'
 
+## npx gulp coffee: builds *.js from *.coffee
+exports.coffee = coffee = ->
+  gulp.src '*.coffee', ignore: 'gulpfile.coffee'
+  .pipe gulpCoffee()
+  .pipe gulpChmod 0o644
+  .pipe gulp.dest './'
+
 ## npm run watch / npx gulp watch: continuously update index.html from deps
 exports.watch = watch = ->
   gulp.watch '*.pug', ignoreInitial: false, pug
   gulp.watch '*.styl', pug
-  gulp.watch '*.coffee', ignored: 'gulpfile.coffee', pug
+  ## For coffee inlined into pug:
+  #gulp.watch '*.coffee', ignored: 'gulpfile.coffee', pug
+  ## For coffee built separated into js:
+  gulp.watch '*.coffee',
+    ignored: 'gulpfile.coffee'
+    ignoreInitial: false
+  , coffee
 
 deploySet = [
   './.nojekyll'
@@ -45,9 +59,12 @@ deploySet = [
   './node_modules/@fontsource/merriweather/files/merriweather-latin-900-italic.woff2'
 ]
 
+## npm run build / npx gulp: build index.html and *.coffee
+exports.build = exports.default = build = gulp.parallel pug, coffee
+
 ## npm run dist / npx gulp dist: copy just needed files to `dist` directory
 ## (for testing before deploy)
-exports.dist = dist = gulp.series pug, copy = ->
+exports.dist = dist = gulp.series build, copy = ->
   gulp.src deploySet, base: './'
   .pipe gulp.dest './dist/',
     mode: 0o644
