@@ -3,6 +3,7 @@ gulpCoffee = require 'gulp-coffee'
 gulpPug = require 'gulp-pug'
 gulpChmod = require 'gulp-chmod'
 gulpGhPages = require 'gulp-gh-pages'
+rimraf = require 'rimraf'
 
 ## npm run build / npx gulp pug: builds index.html from index.pug etc.
 exports.pug = pug = ->
@@ -66,11 +67,13 @@ exports.build = exports.default = build = gulp.parallel pug, coffee
 
 ## npm run dist / npx gulp dist: copy just needed files to `dist` directory
 ## (for testing before deploy)
-exports.dist = dist = gulp.series build, copy = ->
-  gulp.src deploySet, base: './'
-  .pipe gulp.dest './dist/',
-    mode: 0o644
-    dirMode: 0o755
+exports.dist = dist = gulp.series build,
+  distRimraf = (cb) -> rimraf './dist/', cb
+  copy = ->
+    gulp.src deploySet, base: './'
+    .pipe gulp.dest './dist/',
+      mode: 0o644
+      dirMode: 0o755
 
 ## npm run deploy / npx gulp deploy: deploy needed files to `gh-pages` branch
 ## (thereby deploying to GitHub Pages)
